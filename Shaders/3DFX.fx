@@ -13,35 +13,35 @@ uniform float DITHERAMOUNT <
 	ui_type = "drag";
 	ui_min = 0.0;
 	ui_max = 1.0;
-	ui_label = "Dither Amount [3DFX]";
+	ui_label = "抖动量 [3DFX]";
 > = 0.5;
 
 uniform int DITHERBIAS <
 	ui_type = "drag";
 	ui_min = -16;
 	ui_max = 16;
-	ui_label = "Dither Bias [3DFX]";
+	ui_label = "抖动偏误 [3DFX]";
 > = -1;
 
 uniform float LEIFX_LINES <
 	ui_type = "drag";
 	ui_min = 0.0;
 	ui_max = 2.0;
-	ui_label = "Lines Intensity [3DFX]";
+	ui_label = "线条强度 [3DFX]";
 > = 1.0;
 
 uniform float LEIFX_PIXELWIDTH <
 	ui_type = "drag";
 	ui_min = 0.0;
 	ui_max = 100.0;
-	ui_label = "Pixel Width [3DFX]";
+	ui_label = "像素宽度 [3DFX]";
 > = 1.5;
 
 uniform float GAMMA_LEVEL <
 	ui_type = "drag";
 	ui_min = 0.0;
 	ui_max = 3.0;
-	ui_label = "Gamma Level [3DFX]";
+	ui_label = "Gamma水平 [3DFX]";
 > = 1.0;
 
 #ifndef FILTCAP
@@ -234,6 +234,10 @@ float4 PS_3DFX2(float4 vpos : SV_Position, float2 texcoord : TEXCOORD) : SV_Targ
 }
 
 technique LeiFx_Tech
+<
+	ui_label = "Lei 3D效果";
+	ui_tooltip = "在屏幕上添加扫描线(没啥用)";
+
 {
 	pass LeiFx
 	{
